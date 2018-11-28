@@ -22,17 +22,17 @@ namespace hansot_pos
             menuInfo = menuList;
 
             //이미지 Path 문법 찾아보기.
-            MenuImage.Image = new Bitmap(ImageResize(menuList.imagePath));
-            MenuNameLabel.Text = menuList.Name;
-            MenuPriceLabel.Text = Convert.ToString(menuList.price)+" 원";
+            MenuImage.Image = new Bitmap(ResizeImage(menuList.imagePath));
+            lbMenuName.Text = menuList.Name;
+            lbMenuPrice.Text = Convert.ToString(menuList.price)+" 원";
         }
 
-        private Bitmap ImageResize(string imagePath)
+        private Bitmap ResizeImage(string imagePath)
         {
             Bitmap originalImage = new Bitmap(imagePath);
 
-            int width = originalImage.Width / 4;
-            int height = originalImage.Height / 4;
+            int width = originalImage.Width / 5;
+            int height = originalImage.Height / 5;
 
             Size resize = new Size(width, height);
             Bitmap resizeImage = new Bitmap(originalImage, resize);

@@ -8,7 +8,7 @@ namespace hansot_pos
         //상수 선언부
         private const int interval = 1000;
 
-        private string tableNum = string.Empty;
+        private string tableNumber = string.Empty;
         private Timer timer;
         TableUserCtrl tb;
          
@@ -16,23 +16,25 @@ namespace hansot_pos
         {
             InitializeComponent();
 
-            TablePanel_Adder();
+            AddTablePanel();
         }
 
         //Main이 로드될 시 실행되는 함수
         private void Main_Load(object sender, EventArgs e)
         {
-            Timer_Set();
+            SetTimer();
 
-            NowDate.Text = DateTime.Now.ToString("yyyy.MM.dd");
-            NowTime.Text = DateTime.Now.ToLongTimeString();
+            lbNowDate.Text = DateTime.Now.ToString("yyyy.MM.dd");
+            lbNowTime.Text = DateTime.Now.ToLongTimeString();
         }
 
         //Timer 세팅 함수
-        private void Timer_Set()
+        private void SetTimer()
         {
-            timer = new Timer();
-            timer.Interval = interval;
+            timer = new Timer
+            {
+                Interval = interval
+            };
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
         }
@@ -40,14 +42,14 @@ namespace hansot_pos
         //Timer 세팅 함수
         private void Timer_Tick(object sender, EventArgs e)
         {
-            this.NowDate.Text = DateTime.Now.ToString("yyyy.MM.dd");
-            this.NowTime.Text = DateTime.Now.ToLongTimeString();
+            this.lbNowDate.Text = DateTime.Now.ToString("yyyy.MM.dd");
+            this.lbNowTime.Text = DateTime.Now.ToLongTimeString();
         }
 
         //TablePanel에 TableUserCtrl을 각각 띄워주는 함수
-        public void TablePanel_Adder()
+        public void AddTablePanel()
         {
-            int column, row, cnt = 0;
+            int column, row, count = 0;
 
             for (column = 0; column < this.tablePanel.ColumnCount; column++)
             {
@@ -56,15 +58,15 @@ namespace hansot_pos
                     tb = new TableUserCtrl();
                     tb.Size = new System.Drawing.Size(469, 239);
 
-                    tableNum = "table" + (cnt + 1);
-                    tb.tableNumber = tableNum;
+                    this.tableNumber = "table" + (count + 1);
+                    tb.tableNumber = this.tableNumber;
 
-                    tb.SetTableNum(tableNum);
+                    tb.SetTableNum(this.tableNumber);
 
-                    tb.SetTableNumberLabel(tableNum);
+                    tb.SetTableNumberLabel(this.tableNumber);
                     tablePanel.Controls.Add(tb, row, column);
 
-                    cnt++;
+                    count++;
                 }
             }   
         }

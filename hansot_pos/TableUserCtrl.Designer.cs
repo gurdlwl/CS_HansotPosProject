@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.TableNumber = new System.Windows.Forms.Label();
+            this.lbTableNumber = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
             this.menuListBox = new System.Windows.Forms.ListBox();
             this.panel2.SuspendLayout();
@@ -39,24 +39,24 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.panel2.Controls.Add(this.TableNumber);
+            this.panel2.Controls.Add(this.lbTableNumber);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(464, 40);
             this.panel2.TabIndex = 0;
-            this.panel2.Click += new System.EventHandler(this.Click);
+            this.panel2.Click += new System.EventHandler(this.Clicked);
             // 
-            // TableNumber
+            // lbTableNumber
             // 
-            this.TableNumber.AutoSize = true;
-            this.TableNumber.Font = new System.Drawing.Font("Gulim", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TableNumber.Location = new System.Drawing.Point(185, 9);
-            this.TableNumber.Name = "TableNumber";
-            this.TableNumber.Size = new System.Drawing.Size(130, 21);
-            this.TableNumber.TabIndex = 0;
-            this.TableNumber.Text = "TableNumber";
-            this.TableNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.TableNumber.Click += new System.EventHandler(this.Click);
+            this.lbTableNumber.AutoSize = true;
+            this.lbTableNumber.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbTableNumber.Location = new System.Drawing.Point(185, 9);
+            this.lbTableNumber.Name = "lbTableNumber";
+            this.lbTableNumber.Size = new System.Drawing.Size(130, 21);
+            this.lbTableNumber.TabIndex = 0;
+            this.lbTableNumber.Text = "TableNumber";
+            this.lbTableNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTableNumber.Click += new System.EventHandler(this.Clicked);
             // 
             // panel
             // 
@@ -67,19 +67,19 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(470, 240);
             this.panel.TabIndex = 0;
-            this.panel.Click += new System.EventHandler(this.Click);
+            this.panel.Click += new System.EventHandler(this.Clicked);
             // 
             // menuListBox
             // 
             this.menuListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.menuListBox.Font = new System.Drawing.Font("Gulim", 12F);
+            this.menuListBox.Font = new System.Drawing.Font("굴림", 12F);
             this.menuListBox.FormattingEnabled = true;
             this.menuListBox.ItemHeight = 16;
             this.menuListBox.Location = new System.Drawing.Point(14, 65);
             this.menuListBox.Name = "menuListBox";
             this.menuListBox.Size = new System.Drawing.Size(443, 160);
             this.menuListBox.TabIndex = 1;
-            this.menuListBox.Click += new System.EventHandler(this.Click);
+            this.menuListBox.Click += new System.EventHandler(this.Clicked);
             // 
             // TableUserCtrl
             // 
@@ -98,7 +98,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label TableNumber;
+        private System.Windows.Forms.Label lbTableNumber;
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.ListBox menuListBox;
     }

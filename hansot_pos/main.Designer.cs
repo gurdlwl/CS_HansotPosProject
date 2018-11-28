@@ -32,8 +32,8 @@ namespace hansot_pos
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.tablePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.NowDate = new System.Windows.Forms.Label();
-            this.NowTime = new System.Windows.Forms.Label();
+            this.lbNowDate = new System.Windows.Forms.Label();
+            this.lbNowTime = new System.Windows.Forms.Label();
             this.StatBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -52,25 +52,25 @@ namespace hansot_pos
             this.tablePanel.Size = new System.Drawing.Size(950, 737);
             this.tablePanel.TabIndex = 0;
             // 
-            // NowDate
+            // lbNowDate
             // 
-            this.NowDate.AutoSize = true;
-            this.NowDate.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.NowDate.Location = new System.Drawing.Point(983, 34);
-            this.NowDate.Name = "NowDate";
-            this.NowDate.Size = new System.Drawing.Size(230, 48);
-            this.NowDate.TabIndex = 1;
-            this.NowDate.Text = "NowDate";
+            this.lbNowDate.AutoSize = true;
+            this.lbNowDate.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbNowDate.Location = new System.Drawing.Point(983, 34);
+            this.lbNowDate.Name = "lbNowDate";
+            this.lbNowDate.Size = new System.Drawing.Size(230, 48);
+            this.lbNowDate.TabIndex = 1;
+            this.lbNowDate.Text = "NowDate";
             // 
-            // NowTime
+            // lbNowTime
             // 
-            this.NowTime.AutoSize = true;
-            this.NowTime.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.NowTime.Location = new System.Drawing.Point(983, 89);
-            this.NowTime.Name = "NowTime";
-            this.NowTime.Size = new System.Drawing.Size(234, 48);
-            this.NowTime.TabIndex = 2;
-            this.NowTime.Text = "NowTime";
+            this.lbNowTime.AutoSize = true;
+            this.lbNowTime.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbNowTime.Location = new System.Drawing.Point(983, 94);
+            this.lbNowTime.Name = "lbNowTime";
+            this.lbNowTime.Size = new System.Drawing.Size(234, 48);
+            this.lbNowTime.TabIndex = 2;
+            this.lbNowTime.Text = "NowTime";
             // 
             // StatBtn
             // 
@@ -104,8 +104,8 @@ namespace hansot_pos
             this.ClientSize = new System.Drawing.Size(1384, 761);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.StatBtn);
-            this.Controls.Add(this.NowTime);
-            this.Controls.Add(this.NowDate);
+            this.Controls.Add(this.lbNowTime);
+            this.Controls.Add(this.lbNowDate);
             this.Controls.Add(this.tablePanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
@@ -120,8 +120,8 @@ namespace hansot_pos
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tablePanel;
-        private System.Windows.Forms.Label NowDate;
-        private System.Windows.Forms.Label NowTime;
+        private System.Windows.Forms.Label lbNowDate;
+        private System.Windows.Forms.Label lbNowTime;
         private System.Windows.Forms.Button StatBtn;
         private System.Windows.Forms.Button ExitBtn;
     }

@@ -30,9 +30,9 @@
         {
             this.MenuImage = new System.Windows.Forms.PictureBox();
             this.MenuNamePanel = new System.Windows.Forms.Panel();
-            this.MenuNameLabel = new System.Windows.Forms.Label();
+            this.lbMenuName = new System.Windows.Forms.Label();
             this.MenuPricePanel = new System.Windows.Forms.Panel();
-            this.MenuPriceLabel = new System.Windows.Forms.Label();
+            this.lbMenuPrice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MenuImage)).BeginInit();
             this.MenuNamePanel.SuspendLayout();
             this.MenuPricePanel.SuspendLayout();
@@ -52,42 +52,42 @@
             // MenuNamePanel
             // 
             this.MenuNamePanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.MenuNamePanel.Controls.Add(this.MenuNameLabel);
+            this.MenuNamePanel.Controls.Add(this.lbMenuName);
             this.MenuNamePanel.Location = new System.Drawing.Point(3, 3);
             this.MenuNamePanel.Name = "MenuNamePanel";
             this.MenuNamePanel.Size = new System.Drawing.Size(215, 40);
             this.MenuNamePanel.TabIndex = 1;
             // 
-            // MenuNameLabel
+            // lbMenuName
             // 
-            this.MenuNameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MenuNameLabel.Font = new System.Drawing.Font("Gulim", 11F);
-            this.MenuNameLabel.Location = new System.Drawing.Point(0, 0);
-            this.MenuNameLabel.Name = "MenuNameLabel";
-            this.MenuNameLabel.Size = new System.Drawing.Size(215, 40);
-            this.MenuNameLabel.TabIndex = 0;
-            this.MenuNameLabel.Text = "MenuName";
-            this.MenuNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbMenuName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMenuName.Font = new System.Drawing.Font("굴림", 11F);
+            this.lbMenuName.Location = new System.Drawing.Point(0, 0);
+            this.lbMenuName.Name = "lbMenuName";
+            this.lbMenuName.Size = new System.Drawing.Size(215, 40);
+            this.lbMenuName.TabIndex = 0;
+            this.lbMenuName.Text = "MenuName";
+            this.lbMenuName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MenuPricePanel
             // 
             this.MenuPricePanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.MenuPricePanel.Controls.Add(this.MenuPriceLabel);
+            this.MenuPricePanel.Controls.Add(this.lbMenuPrice);
             this.MenuPricePanel.Location = new System.Drawing.Point(230, 144);
             this.MenuPricePanel.Name = "MenuPricePanel";
             this.MenuPricePanel.Size = new System.Drawing.Size(105, 40);
             this.MenuPricePanel.TabIndex = 2;
             // 
-            // MenuPriceLabel
+            // lbMenuPrice
             // 
-            this.MenuPriceLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MenuPriceLabel.Font = new System.Drawing.Font("Gulim", 13F);
-            this.MenuPriceLabel.Location = new System.Drawing.Point(0, 0);
-            this.MenuPriceLabel.Name = "MenuPriceLabel";
-            this.MenuPriceLabel.Size = new System.Drawing.Size(105, 40);
-            this.MenuPriceLabel.TabIndex = 0;
-            this.MenuPriceLabel.Text = "MenuPrice";
-            this.MenuPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbMenuPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMenuPrice.Font = new System.Drawing.Font("굴림", 13F);
+            this.lbMenuPrice.Location = new System.Drawing.Point(0, 0);
+            this.lbMenuPrice.Name = "lbMenuPrice";
+            this.lbMenuPrice.Size = new System.Drawing.Size(105, 40);
+            this.lbMenuPrice.TabIndex = 0;
+            this.lbMenuPrice.Text = "MenuPrice";
+            this.lbMenuPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MenuListCtrl
             // 
@@ -110,8 +110,8 @@
 
         private System.Windows.Forms.PictureBox MenuImage;
         private System.Windows.Forms.Panel MenuNamePanel;
-        private System.Windows.Forms.Label MenuNameLabel;
+        private System.Windows.Forms.Label lbMenuName;
         private System.Windows.Forms.Panel MenuPricePanel;
-        private System.Windows.Forms.Label MenuPriceLabel;
+        private System.Windows.Forms.Label lbMenuPrice;
     }
 }

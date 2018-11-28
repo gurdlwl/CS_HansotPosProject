@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order));
-            this.tableNum = new System.Windows.Forms.Label();
-            this.nowDateTIme = new System.Windows.Forms.Label();
+            this.lbTableNum = new System.Windows.Forms.Label();
+            this.lbNowDateTIme = new System.Windows.Forms.Label();
             this.OrderedMenuListPanel = new System.Windows.Forms.Panel();
             this.OrderMenuListView = new System.Windows.Forms.ListView();
             this.SelectMenuImagePanel = new System.Windows.Forms.Panel();
@@ -47,12 +47,12 @@
             this.CancelBtn = new System.Windows.Forms.Button();
             this.MinusBtn = new System.Windows.Forms.Button();
             this.PlusBtn = new System.Windows.Forms.Button();
+            this.OrderBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
             this.PaymentBtn = new System.Windows.Forms.Button();
             this.MenuListTablePanel = new System.Windows.Forms.TableLayoutPanel();
             this.MenuTablePanel = new System.Windows.Forms.Panel();
-            this.totalPrice = new System.Windows.Forms.Label();
-            this.OrderBtn = new System.Windows.Forms.Button();
+            this.lbTotalPrice = new System.Windows.Forms.Label();
             this.OrderedMenuListPanel.SuspendLayout();
             this.SelectMenuImagePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SelectedImage)).BeginInit();
@@ -61,25 +61,25 @@
             this.MenuTablePanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableNum
+            // lbTableNum
             // 
-            this.tableNum.AutoSize = true;
-            this.tableNum.Font = new System.Drawing.Font("Gulim", 20F);
-            this.tableNum.Location = new System.Drawing.Point(233, 35);
-            this.tableNum.Name = "tableNum";
-            this.tableNum.Size = new System.Drawing.Size(129, 27);
-            this.tableNum.TabIndex = 0;
-            this.tableNum.Text = "tableNum";
+            this.lbTableNum.AutoSize = true;
+            this.lbTableNum.Font = new System.Drawing.Font("굴림", 20F);
+            this.lbTableNum.Location = new System.Drawing.Point(233, 35);
+            this.lbTableNum.Name = "lbTableNum";
+            this.lbTableNum.Size = new System.Drawing.Size(159, 27);
+            this.lbTableNum.TabIndex = 0;
+            this.lbTableNum.Text = "lbTableNum";
             // 
-            // nowDateTIme
+            // lbNowDateTIme
             // 
-            this.nowDateTIme.AutoSize = true;
-            this.nowDateTIme.Font = new System.Drawing.Font("Gulim", 20F);
-            this.nowDateTIme.Location = new System.Drawing.Point(561, 35);
-            this.nowDateTIme.Name = "nowDateTIme";
-            this.nowDateTIme.Size = new System.Drawing.Size(182, 27);
-            this.nowDateTIme.TabIndex = 1;
-            this.nowDateTIme.Text = "nowDateTime";
+            this.lbNowDateTIme.AutoSize = true;
+            this.lbNowDateTIme.Font = new System.Drawing.Font("굴림", 20F);
+            this.lbNowDateTIme.Location = new System.Drawing.Point(510, 35);
+            this.lbNowDateTIme.Name = "lbNowDateTIme";
+            this.lbNowDateTIme.Size = new System.Drawing.Size(207, 27);
+            this.lbNowDateTIme.TabIndex = 1;
+            this.lbNowDateTIme.Text = "lbNowDateTime";
             // 
             // OrderedMenuListPanel
             // 
@@ -92,7 +92,7 @@
             // 
             // OrderMenuListView
             // 
-            this.OrderMenuListView.Font = new System.Drawing.Font("Gulim", 15F);
+            this.OrderMenuListView.Font = new System.Drawing.Font("굴림", 15F);
             this.OrderMenuListView.GridLines = true;
             this.OrderMenuListView.Location = new System.Drawing.Point(3, 3);
             this.OrderMenuListView.Name = "OrderMenuListView";
@@ -143,7 +143,7 @@
             // 
             // SideViewBtn
             // 
-            this.SideViewBtn.Font = new System.Drawing.Font("Gulim", 14F);
+            this.SideViewBtn.Font = new System.Drawing.Font("굴림", 14F);
             this.SideViewBtn.Location = new System.Drawing.Point(471, 3);
             this.SideViewBtn.Name = "SideViewBtn";
             this.SideViewBtn.Size = new System.Drawing.Size(111, 64);
@@ -154,7 +154,7 @@
             // 
             // BowlViewBtn
             // 
-            this.BowlViewBtn.Font = new System.Drawing.Font("Gulim", 13.5F);
+            this.BowlViewBtn.Font = new System.Drawing.Font("굴림", 13.5F);
             this.BowlViewBtn.Location = new System.Drawing.Point(354, 3);
             this.BowlViewBtn.Name = "BowlViewBtn";
             this.BowlViewBtn.Size = new System.Drawing.Size(111, 64);
@@ -165,7 +165,7 @@
             // 
             // SqaureViewBtn
             // 
-            this.SqaureViewBtn.Font = new System.Drawing.Font("Gulim", 13.5F);
+            this.SqaureViewBtn.Font = new System.Drawing.Font("굴림", 13.5F);
             this.SqaureViewBtn.Location = new System.Drawing.Point(237, 3);
             this.SqaureViewBtn.Name = "SqaureViewBtn";
             this.SqaureViewBtn.Size = new System.Drawing.Size(111, 64);
@@ -176,7 +176,7 @@
             // 
             // PremiumGomeiViewBtn
             // 
-            this.PremiumGomeiViewBtn.Font = new System.Drawing.Font("Gulim", 14F);
+            this.PremiumGomeiViewBtn.Font = new System.Drawing.Font("굴림", 14F);
             this.PremiumGomeiViewBtn.Location = new System.Drawing.Point(120, 3);
             this.PremiumGomeiViewBtn.Name = "PremiumGomeiViewBtn";
             this.PremiumGomeiViewBtn.Size = new System.Drawing.Size(111, 64);
@@ -187,7 +187,7 @@
             // 
             // AllViewBtn
             // 
-            this.AllViewBtn.Font = new System.Drawing.Font("Gulim", 14F);
+            this.AllViewBtn.Font = new System.Drawing.Font("굴림", 14F);
             this.AllViewBtn.Location = new System.Drawing.Point(3, 3);
             this.AllViewBtn.Name = "AllViewBtn";
             this.AllViewBtn.Size = new System.Drawing.Size(111, 64);
@@ -198,7 +198,7 @@
             // 
             // DrinkViewBtn
             // 
-            this.DrinkViewBtn.Font = new System.Drawing.Font("Gulim", 14F);
+            this.DrinkViewBtn.Font = new System.Drawing.Font("굴림", 14F);
             this.DrinkViewBtn.Location = new System.Drawing.Point(588, 3);
             this.DrinkViewBtn.Name = "DrinkViewBtn";
             this.DrinkViewBtn.Size = new System.Drawing.Size(113, 64);
@@ -230,7 +230,7 @@
             // 
             // AllCancelBtn
             // 
-            this.AllCancelBtn.Font = new System.Drawing.Font("Gulim", 20F);
+            this.AllCancelBtn.Font = new System.Drawing.Font("굴림", 20F);
             this.AllCancelBtn.Location = new System.Drawing.Point(3, 243);
             this.AllCancelBtn.Name = "AllCancelBtn";
             this.AllCancelBtn.Size = new System.Drawing.Size(254, 56);
@@ -241,7 +241,7 @@
             // 
             // CancelBtn
             // 
-            this.CancelBtn.Font = new System.Drawing.Font("Gulim", 20F);
+            this.CancelBtn.Font = new System.Drawing.Font("굴림", 20F);
             this.CancelBtn.Location = new System.Drawing.Point(3, 183);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(254, 54);
@@ -252,7 +252,7 @@
             // 
             // MinusBtn
             // 
-            this.MinusBtn.Font = new System.Drawing.Font("Gulim", 20F);
+            this.MinusBtn.Font = new System.Drawing.Font("굴림", 20F);
             this.MinusBtn.Location = new System.Drawing.Point(3, 123);
             this.MinusBtn.Name = "MinusBtn";
             this.MinusBtn.Size = new System.Drawing.Size(254, 54);
@@ -263,7 +263,7 @@
             // 
             // PlusBtn
             // 
-            this.PlusBtn.Font = new System.Drawing.Font("Gulim", 20F);
+            this.PlusBtn.Font = new System.Drawing.Font("굴림", 20F);
             this.PlusBtn.Location = new System.Drawing.Point(3, 63);
             this.PlusBtn.Name = "PlusBtn";
             this.PlusBtn.Size = new System.Drawing.Size(254, 54);
@@ -272,10 +272,21 @@
             this.PlusBtn.UseVisualStyleBackColor = true;
             this.PlusBtn.Click += new System.EventHandler(this.PlusBtn_Click);
             // 
+            // OrderBtn
+            // 
+            this.OrderBtn.Font = new System.Drawing.Font("굴림", 20F);
+            this.OrderBtn.Location = new System.Drawing.Point(3, 3);
+            this.OrderBtn.Name = "OrderBtn";
+            this.OrderBtn.Size = new System.Drawing.Size(254, 54);
+            this.OrderBtn.TabIndex = 11;
+            this.OrderBtn.Text = "주문하기";
+            this.OrderBtn.UseVisualStyleBackColor = true;
+            this.OrderBtn.Click += new System.EventHandler(this.OrderBtn_Click);
+            // 
             // backBtn
             // 
             this.backBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.backBtn.Font = new System.Drawing.Font("Gulim", 20F);
+            this.backBtn.Font = new System.Drawing.Font("굴림", 20F);
             this.backBtn.Location = new System.Drawing.Point(12, 12);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(215, 73);
@@ -287,7 +298,7 @@
             // PaymentBtn
             // 
             this.PaymentBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PaymentBtn.Font = new System.Drawing.Font("Gulim", 20F);
+            this.PaymentBtn.Font = new System.Drawing.Font("굴림", 20F);
             this.PaymentBtn.Location = new System.Drawing.Point(1157, 12);
             this.PaymentBtn.Name = "PaymentBtn";
             this.PaymentBtn.Size = new System.Drawing.Size(215, 73);
@@ -321,26 +332,15 @@
             this.MenuTablePanel.Size = new System.Drawing.Size(701, 582);
             this.MenuTablePanel.TabIndex = 11;
             // 
-            // totalPrice
+            // lbTotalPrice
             // 
-            this.totalPrice.AutoSize = true;
-            this.totalPrice.Font = new System.Drawing.Font("Gulim", 20F);
-            this.totalPrice.Location = new System.Drawing.Point(900, 35);
-            this.totalPrice.Name = "totalPrice";
-            this.totalPrice.Size = new System.Drawing.Size(128, 27);
-            this.totalPrice.TabIndex = 12;
-            this.totalPrice.Text = "totalPrice";
-            // 
-            // OrderBtn
-            // 
-            this.OrderBtn.Font = new System.Drawing.Font("Gulim", 20F);
-            this.OrderBtn.Location = new System.Drawing.Point(3, 3);
-            this.OrderBtn.Name = "OrderBtn";
-            this.OrderBtn.Size = new System.Drawing.Size(254, 54);
-            this.OrderBtn.TabIndex = 11;
-            this.OrderBtn.Text = "주문하기";
-            this.OrderBtn.UseVisualStyleBackColor = true;
-            this.OrderBtn.Click += new System.EventHandler(this.OrderBtn_Click);
+            this.lbTotalPrice.AutoSize = true;
+            this.lbTotalPrice.Font = new System.Drawing.Font("굴림", 20F);
+            this.lbTotalPrice.Location = new System.Drawing.Point(900, 35);
+            this.lbTotalPrice.Name = "lbTotalPrice";
+            this.lbTotalPrice.Size = new System.Drawing.Size(158, 27);
+            this.lbTotalPrice.TabIndex = 12;
+            this.lbTotalPrice.Text = "lbTotalPrice";
             // 
             // Order
             // 
@@ -348,7 +348,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1384, 761);
-            this.Controls.Add(this.totalPrice);
+            this.Controls.Add(this.lbTotalPrice);
             this.Controls.Add(this.MenuTablePanel);
             this.Controls.Add(this.PaymentBtn);
             this.Controls.Add(this.ButtonTablePanel);
@@ -356,8 +356,8 @@
             this.Controls.Add(this.SelectMenuImagePanel);
             this.Controls.Add(this.OrderedMenuListPanel);
             this.Controls.Add(this.backBtn);
-            this.Controls.Add(this.nowDateTIme);
-            this.Controls.Add(this.tableNum);
+            this.Controls.Add(this.lbNowDateTIme);
+            this.Controls.Add(this.lbTableNum);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Order";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -377,8 +377,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label tableNum;
-        private System.Windows.Forms.Label nowDateTIme;
+        private System.Windows.Forms.Label lbTableNum;
+        private System.Windows.Forms.Label lbNowDateTIme;
         private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Panel OrderedMenuListPanel;
         private System.Windows.Forms.Panel SelectMenuImagePanel;
@@ -399,7 +399,7 @@
         private System.Windows.Forms.Button SideViewBtn;
         private System.Windows.Forms.PictureBox SelectedImage;
         private System.Windows.Forms.Panel MenuTablePanel;
-        private System.Windows.Forms.Label totalPrice;
+        private System.Windows.Forms.Label lbTotalPrice;
         private System.Windows.Forms.Button OrderBtn;
     }
 }

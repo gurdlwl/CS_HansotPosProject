@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
@@ -12,45 +11,48 @@ namespace hansot_pos
         public delegate void OrderCompleteHandler(object sender, EventArgs e);
         public event OrderCompleteHandler OnOrderComplete;
 
+        public delegate void SetListBox();
+        public event SetListBox setListBox;
+
         //상수 선언부
         private const int interval = 1000;
-
         private string tableNumber = string.Empty;
         string[] menuArr = new string[3];
+        private string barcodeString = string.Empty;
 
         private Timer timer;
         MenuListCtrl menuListCtrl;
+        ListSet ls = new ListSet();
 
         public Order(string tableNumber)
         {
             InitializeComponent();
             this.tableNumber = tableNumber; //넘어온 TableNumber를 이 클래스 내부 TableNumber에 넣어준다
 
-            if (Program.list != null)
+            ls.SetList(tableNumber);
+
+            if (Program.tempList.Count != 0)
             {
-                SetList();
                 UpdateListView();
             }
         }
 
         public void Order_Load(object sender, EventArgs e)
         {
-            this.nowDateTIme.Text = System.DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
+            this.lbNowDateTIme.Text = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
 
             Timer_Set();
             AddTablePanel();
             
-            this.tableNum.Text = tableNumber;
-            totalPrice.Text = "총 금액 : 0";
+            this.lbTableNum.Text = this.tableNumber;
+            lbTotalPrice.Text = "총 금액 : 0";
 
             SetOrderMenuListView();
+            SetTotalPrice();
         }
 
         private void SetOrderMenuListView()
         {
-            //ref. http://cocomo.tistory.com/484 
-            //ref. https://docs.microsoft.com/ko-kr/dotnet/api/system.windows.forms.columnheader.textalign?redirectedfrom=MSDN&view=netframework-4.7.2#System_Windows_Forms_ColumnHeader_TextAlign
-
             OrderMenuListView.Columns.Add("메뉴이름", 380);
             OrderMenuListView.Columns.Add("수량", 110, HorizontalAlignment.Center);
             OrderMenuListView.Columns.Add("가격", 150, HorizontalAlignment.Center);
@@ -64,9 +66,8 @@ namespace hansot_pos
         public void AddTablePanel()
         {
             int column = 0, row = 0;
-            int menuListCnt = Program.menuList.Count;
 
-            for(int index = 0; index < menuListCnt; index++)
+            for(int index = 0; index < Program.menuList.Count; index++)
             {
                 menuListCtrl = new MenuListCtrl(Program.menuList[index]);
                 MenuListTablePanel.Controls.Add(menuListCtrl, column++, row);
@@ -108,7 +109,6 @@ namespace hansot_pos
                 return;
 
             MenuInfo info = menuCtrl.GetData();
-            
             AddListView(info);
 
             SetTotalPrice();
@@ -132,7 +132,6 @@ namespace hansot_pos
                     return;
                 }
             }
-
             cnt = info.cnt + 1;
 
             menuArr[0] = info.Name;
@@ -145,65 +144,16 @@ namespace hansot_pos
 
         public void UpdateListView()
         {
-            for(int index = 0; index < Program.list.Count; index++)
+            for(int index = 0; index < Program.tempList.Count; index++)
             {
-                menuArr[0] = Program.list[index].Name;
-                menuArr[1] = Program.list[index].cnt.ToString();
-                menuArr[2] = Program.list[index].price.ToString();
+                menuArr[0] = Program.tempList[index].Name;
+                menuArr[1] = Program.tempList[index].cnt.ToString();
+                menuArr[2] = Program.tempList[index].price.ToString();
 
                 ListViewItem lvi = new ListViewItem(menuArr);
                 OrderMenuListView.Items.Add(lvi);
             }
-        }
-
-        private void SetList()
-        {
-            switch (tableNumber)
-            {
-                case "table1":
-                    Program.list = Program.table1Menu;
-                    break;
-                case "table2":
-                    Program.list = Program.table2Menu;
-                    break;
-                case "table3":
-                    Program.list = Program.table3Menu;
-                    break;
-                case "table4":
-                    Program.list = Program.table4Menu;
-                    break;
-                case "table5":
-                    Program.list = Program.table5Menu;
-                    break;
-                case "table6":
-                    Program.list = Program.table6Menu;
-                    break;
-            }
-        }
-
-        private void SetPgList()
-        {
-            switch (tableNumber)
-            {
-                case "table1":
-                    Program.table1Menu = Program.list;
-                    break;
-                case "table2":
-                    Program.table2Menu = Program.list;
-                    break;
-                case "table3":
-                    Program.table3Menu = Program.list;
-                    break;
-                case "table4":
-                    Program.table4Menu = Program.list;
-                    break;
-                case "table5":
-                    Program.table5Menu = Program.list;
-                    break;
-                case "table6":
-                    Program.table6Menu = Program.list;
-                    break;
-            }
+            ls.SetPgList(tableNumber);
         }
 
         private void SetTotalPrice()
@@ -214,8 +164,7 @@ namespace hansot_pos
             {
                 total += int.Parse(item.SubItems[2].Text);
             }
-
-            totalPrice.Text = "총 금액 : " + total.ToString();
+            lbTotalPrice.Text = "총 금액 : " + total.ToString();
         }
 
         private void Timer_Set()
@@ -230,7 +179,7 @@ namespace hansot_pos
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            this.nowDateTIme.Text = System.DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
+            this.lbNowDateTIme.Text = System.DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
         }
         
         private void BackButton_Click(object sender, EventArgs e)
@@ -240,20 +189,43 @@ namespace hansot_pos
 
         private void PaymentBtn_Click(object sender, EventArgs e)
         {
-            Payment payment = new Payment();
+            Payment payment = new Payment(tableNumber);
+            payment.parentClose += Payment_parentClose;
             payment.Show();
+        }
+
+        private void Payment_parentClose()
+        {
+            this.Dispose();
+            Program.tempList.Clear();
+            setListBox();
+        }
+
+        private MenuInfo GetCategory(string name)
+        {
+            foreach(MenuInfo menu in Program.menuList)
+            {
+                if(menu.Name == name)
+                {
+                    return menu;
+                }
+            }
+            return null;
         }
 
         private void OrderBtn_Click(object sender, EventArgs e)
         {
+            Program.tempList.Clear();
+
             for (int index = 0; index < OrderMenuListView.Items.Count; index++)
             {
                 MenuInfo menu = new MenuInfo();
                 menu.Name = OrderMenuListView.Items[index].SubItems[0].Text;
                 menu.cnt = int.Parse(OrderMenuListView.Items[index].SubItems[1].Text);
                 menu.price = int.Parse(OrderMenuListView.Items[index].SubItems[2].Text);
+                menu.category = GetCategory(menu.Name).category;
                
-                Program.list.Add(menu);
+                Program.tempList.Add(menu);
             }
 
             if(OnOrderComplete != null)
@@ -261,8 +233,7 @@ namespace hansot_pos
                 OnOrderComplete(this, e);
                 MessageBox.Show("주문 완료");
             }
-
-            SetPgList();
+            
             this.Close();
         }
 
@@ -397,8 +368,7 @@ namespace hansot_pos
             MenuListTablePanel.RowStyles.Clear();
         }
 
-        private string barcodeString = string.Empty;
-
+        //바코드
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             this.ActiveControl = null;

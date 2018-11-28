@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.OrderedMenuListBox = new System.Windows.Forms.ListBox();
-            this.Pay = new System.Windows.Forms.Button();
-            this.Cancel = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.PayBtn = new System.Windows.Forms.Button();
+            this.CancelBtn = new System.Windows.Forms.Button();
+            this.CashRadioBtn = new System.Windows.Forms.RadioButton();
+            this.CardRadioBtn = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // OrderedMenuListBox
@@ -44,61 +44,61 @@
             this.OrderedMenuListBox.Size = new System.Drawing.Size(450, 424);
             this.OrderedMenuListBox.TabIndex = 0;
             // 
-            // Pay
+            // PayBtn
             // 
-            this.Pay.Font = new System.Drawing.Font("Gulim", 20F);
-            this.Pay.Location = new System.Drawing.Point(468, 376);
-            this.Pay.Name = "Pay";
-            this.Pay.Size = new System.Drawing.Size(157, 60);
-            this.Pay.TabIndex = 1;
-            this.Pay.Text = "결제";
-            this.Pay.UseVisualStyleBackColor = true;
-            this.Pay.Click += new System.EventHandler(this.Pay_Click);
+            this.PayBtn.Font = new System.Drawing.Font("굴림", 20F);
+            this.PayBtn.Location = new System.Drawing.Point(468, 376);
+            this.PayBtn.Name = "PayBtn";
+            this.PayBtn.Size = new System.Drawing.Size(157, 60);
+            this.PayBtn.TabIndex = 1;
+            this.PayBtn.Text = "결제";
+            this.PayBtn.UseVisualStyleBackColor = true;
+            this.PayBtn.Click += new System.EventHandler(this.PayBtn_Click);
             // 
-            // Cancel
+            // CancelBtn
             // 
-            this.Cancel.Font = new System.Drawing.Font("Gulim", 20F);
-            this.Cancel.Location = new System.Drawing.Point(631, 376);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(157, 60);
-            this.Cancel.TabIndex = 2;
-            this.Cancel.Text = "취소";
-            this.Cancel.UseVisualStyleBackColor = true;
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            this.CancelBtn.Font = new System.Drawing.Font("굴림", 20F);
+            this.CancelBtn.Location = new System.Drawing.Point(631, 376);
+            this.CancelBtn.Name = "CancelBtn";
+            this.CancelBtn.Size = new System.Drawing.Size(157, 60);
+            this.CancelBtn.TabIndex = 2;
+            this.CancelBtn.Text = "취소";
+            this.CancelBtn.UseVisualStyleBackColor = true;
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
-            // radioButton1
+            // CashRadioBtn
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Gulim", 20F);
-            this.radioButton1.Location = new System.Drawing.Point(585, 243);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(84, 31);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "현금";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.CashRadioBtn.AutoSize = true;
+            this.CashRadioBtn.Font = new System.Drawing.Font("굴림", 20F);
+            this.CashRadioBtn.Location = new System.Drawing.Point(585, 243);
+            this.CashRadioBtn.Name = "CashRadioBtn";
+            this.CashRadioBtn.Size = new System.Drawing.Size(84, 31);
+            this.CashRadioBtn.TabIndex = 3;
+            this.CashRadioBtn.TabStop = true;
+            this.CashRadioBtn.Text = "현금";
+            this.CashRadioBtn.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // CardRadioBtn
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Gulim", 20F);
-            this.radioButton2.Location = new System.Drawing.Point(585, 299);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(84, 31);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "카드";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.CardRadioBtn.AutoSize = true;
+            this.CardRadioBtn.Font = new System.Drawing.Font("굴림", 20F);
+            this.CardRadioBtn.Location = new System.Drawing.Point(585, 299);
+            this.CardRadioBtn.Name = "CardRadioBtn";
+            this.CardRadioBtn.Size = new System.Drawing.Size(84, 31);
+            this.CardRadioBtn.TabIndex = 4;
+            this.CardRadioBtn.TabStop = true;
+            this.CardRadioBtn.Text = "카드";
+            this.CardRadioBtn.UseVisualStyleBackColor = true;
             // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.Cancel);
-            this.Controls.Add(this.Pay);
+            this.Controls.Add(this.CardRadioBtn);
+            this.Controls.Add(this.CashRadioBtn);
+            this.Controls.Add(this.CancelBtn);
+            this.Controls.Add(this.PayBtn);
             this.Controls.Add(this.OrderedMenuListBox);
             this.Name = "Payment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -111,9 +111,9 @@
         #endregion
 
         private System.Windows.Forms.ListBox OrderedMenuListBox;
-        private System.Windows.Forms.Button Pay;
-        private System.Windows.Forms.Button Cancel;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Button PayBtn;
+        private System.Windows.Forms.Button CancelBtn;
+        private System.Windows.Forms.RadioButton CashRadioBtn;
+        private System.Windows.Forms.RadioButton CardRadioBtn;
     }
 }
