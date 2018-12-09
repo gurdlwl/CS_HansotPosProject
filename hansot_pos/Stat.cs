@@ -120,7 +120,6 @@ namespace hansot_pos
                     totalCount += Program.statList[index].cnt;
                 }
             }
-
             return totalCount.ToString();
         }
 

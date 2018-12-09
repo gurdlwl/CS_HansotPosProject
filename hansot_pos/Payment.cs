@@ -27,8 +27,16 @@ namespace hansot_pos
 
         private bool CheckRadioBtn()
         {
-            if(CashRadioBtn.Checked == true || CardRadioBtn.Checked == true)
+            if(CashRadioBtn.Checked == true)
+            {
+
                 return true;
+            }
+            if(CardRadioBtn.Checked == true)
+            {
+                Program.
+                return true;
+            }
 
             return false;
         }

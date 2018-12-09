@@ -1,5 +1,4 @@
-﻿
-using static hansot_pos.FoodType;
+﻿using static hansot_pos.FoodType;
 
 namespace hansot_pos
 {

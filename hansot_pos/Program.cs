@@ -13,7 +13,7 @@ namespace hansot_pos
         public static List<MenuInfo> menuList = new List<MenuInfo>()
         {
             new MenuInfo() { category = foodType.primeumGomei, Name = "매화(치킨, 연어구이)", price = 10000},
-            new MenuInfo() { category = foodType.primeumGomei, Name = "매화(순살 고등어데리야끼)", price = 10000},
+            //new MenuInfo() { category = foodType.primeumGomei, Name = "매화(순살 고등어데리야끼)", price = 10000},
             //new MenuInfo() { category = foodType.primeumGomei, Name = "진달래", price = 7000},
             //new MenuInfo() { category = foodType.primeumGomei, Name = "개나리(순살 고등어데리야끼)", price = 8000},
             //new MenuInfo() { category = foodType.primeumGomei, Name = "개나리(순살 고등어조림)", price = 8000},
@@ -58,7 +58,7 @@ namespace hansot_pos
             //new MenuInfo() { category = foodType.bowl, Name = "참치야채 감초고추장", price = 3200},
             //new MenuInfo() { category = foodType.bowl, Name = "열무 두부강된장 비빔밥", price = 3800},
             //new MenuInfo() { category = foodType.bowl, Name = "폴리도시락", price = 3800},
-            //new MenuInfo() { category = foodType.side, Name = "반찬 큐브스테이크", price = 4300},
+            new MenuInfo() { category = foodType.side, Name = "반찬 큐브스테이크", price = 4300},
             //new MenuInfo() { category = foodType.side, Name = "반찬 묵은지김치찌개", price = 3900},
             //new MenuInfo() { category = foodType.side, Name = "반찬 소고기육개장", price = 4000},
             //new MenuInfo() { category = foodType.side, Name = "반찬 카레", price = 2400},
@@ -68,8 +68,8 @@ namespace hansot_pos
             //new MenuInfo() { category = foodType.side, Name = "반찬 소불고기", price = 3900},
             //new MenuInfo() { category = foodType.side, Name = "반찬 순살 고등어데리야끼", price = 3400},
             //new MenuInfo() { category = foodType.side, Name = "반찬 치킨", price = 3200},
-            new MenuInfo() { category = foodType.side, Name = "반찬 깐풍기", price = 3000},
-            new MenuInfo() { category = foodType.side, Name = "반찬 고기고기", price = 3000},
+            //new MenuInfo() { category = foodType.side, Name = "반찬 깐풍기", price = 3000},
+            //new MenuInfo() { category = foodType.side, Name = "반찬 고기고기", price = 3000},
             //new MenuInfo() { category = foodType.side, Name = "반찬 돈까스도련님", price = 3000},
             //new MenuInfo() { category = foodType.side, Name = "반찬 제육볶음", price = 3000},
             //new MenuInfo() { category = foodType.side, Name = "반찬 돈까스", price = 2500},
