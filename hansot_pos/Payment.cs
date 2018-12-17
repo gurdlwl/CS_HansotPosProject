@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace hansot_pos
@@ -34,7 +28,6 @@ namespace hansot_pos
             }
             if(CardRadioBtn.Checked == true)
             {
-                Program.
                 return true;
             }
 
